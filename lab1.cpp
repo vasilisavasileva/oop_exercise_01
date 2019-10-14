@@ -1,50 +1,38 @@
-
 #include <iostream>
 #include "Bitstring.h"
 
 
 int main(){
-  uint64_t a;
-  uint32_t b;
   int m, n;
   bool l;
-  std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÑ‚Ñ€Ð¾ÐºÐ¸ 1\n";
-    std::cin >> a >> b;
-  Bitstring BS1 = Bitstring(a, b);
-  std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÑ‚Ñ€Ð¾ÐºÐ¸ 2\n";
-    std::cin >> a >> b;
-  Bitstring BS2 = Bitstring(a, b);
-  std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð±Ð¸Ñ‚Ð¾Ð² Ð´Ð»Ñ ÑÐ´Ð²Ð¸Ð³Ð°\n";
+  std::cout << "Ââåäèòå çíà÷åíèÿ ñòðîêè 1\n";
+  Bitstring BS1;
+  BS1.read(std::cin);
+  std::cout << "Ââåäèòå çíà÷åíèÿ ñòðîêè 2\n";
+  Bitstring BS2;
+  BS2.read(std::cin);
+  std::cout << "Ââåäèòå êîëè÷åñòâî áèòîâ äëÿ ñäâèãà\n";
   std::cin >> n;
-  Bitstring BS3;
-  std::cout << "ÐŸÐµÑ€Ð²Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°\n";
-  BS1.print();
-  std::cout << "Ð’Ñ‚Ð¾Ñ€Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°\n";
-  BS2.print();
+  std::cout << "Ïåðâàÿ ñòðîêà\n";
+  BS1.print(std::cout);
+  std::cout << "Âòîðàÿ ñòðîêà\n";
+  BS2.print(std::cout);
   std::cout << "and\n";
-  BS3 = BS1._and(BS2);
-  BS3.print();
+  BS1._and(BS2).print(std::cout);
   std::cout << "or\n";
-  BS3 = BS1._or(BS2);
-  BS3.print();
+  BS1._or(BS2).print(std::cout);
   std::cout << "xor\n";
-  BS3 = BS1._xor(BS2);
-  BS3.print();
+  BS1._xor(BS2).print(std::cout);
   std::cout << "not\n";
-  BS3 = BS1._not();
-  BS3.print();
+  BS1._not().print(std::cout);
   std::cout << "BS1 shiftleft\n";
-  BS1.shiftLeft(n);
-  BS1.print();
+  BS1.shiftLeft(n).print(std::cout);
   std::cout << "BS2 shiftleft\n";
-  BS2.shiftLeft(n);
-  BS2.print();
-   std::cout << "BS1 shiftRight\n";
-  BS1.shiftRight(n);
-  BS1.print();
+  BS2.shiftLeft(n).print(std::cout);
+  std::cout << "BS1 shiftRight\n";
+  BS1.shiftRight(n).print(std::cout);
   std::cout << "BS2 shiftRight\n";
-  BS2.shiftRight(n);
-  BS2.print();
+  BS2.shiftRight(n).print(std::cout);
   std::cout << "count units BS1\n";
   m = BS1.counter();
   std::cout << m << std::endl;
